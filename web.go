@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"sync"
 	"time"
 )
@@ -15,7 +16,12 @@ var mutex = &sync.Mutex{}
 
 // Serve serves the server serve
 func Serve() {
-	host := "0.0.0.0:3000"
+	port := os.Getenv("GREENHOUSE_WEB_PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	host := "0.0.0.0:" + port
 
 	// http.HandleFunc("/data", getData)
 	http.HandleFunc("/tempchartdata", getTemperatureChartData)
