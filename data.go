@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"sync"
+	"time"
 
 	"github.com/jinzhu/gorm"
 
@@ -45,3 +46,15 @@ func (d *ORM) setup() {
 		&TempHumData{},
 	)
 }
+
+// TempHumData for storing stuff
+type TempHumData struct {
+	ID          int `gorm:"primaryKey"`
+	Timestamp   time.Time
+	Temperature float64
+	Humidity    float64
+}
+
+// func main() {
+// 	DataService().setup()
+// }

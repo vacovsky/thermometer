@@ -19,12 +19,12 @@ func main() {
 	time.Sleep(time.Second * 2)
 	go Serve()
 
-	// db := DataService().DB
+	db := DataService().DB
 
 	for {
 		spew.Dump(storage)
 
-		// db.Save(&storage)
+		db.Save(&storage)
 		time.Sleep(time.Minute * 5)
 	}
 
@@ -40,12 +40,4 @@ func monitorAmbientAir() {
 		mux.Unlock()
 		time.Sleep(time.Minute * 5)
 	}
-}
-
-// TempHumData for storing stuff
-type TempHumData struct {
-	ID          int `gorm:"primaryKey"`
-	Timestamp   time.Time
-	Temperature float64
-	Humidity    float64
 }
