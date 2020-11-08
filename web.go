@@ -47,7 +47,7 @@ func GetTemperaturesChartData() Chart {
 	ambientHumStr := []string{}
 
 	DataService().DB.Where("timestamp > ?",
-		time.Now().Add(-time.Duration(chartHours)*time.Hour)).Find(&rawdata).Order("id desc")
+		time.Now().Add(-time.Duration(chartHours)*time.Hour)).Find(&rawdata).Order("timestamp desc")
 
 	var curAT float64
 	var curAH float64

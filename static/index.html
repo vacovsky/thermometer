@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>gReef</title>
+		<title>Greehouse Monitor</title>
 		<script src="/js/jquery/jquery.min.js"></script>
 		<script src="/js/weld/weld.min.js"></script>
 		<script src="/js/moment/moment.min.js"></script>
@@ -15,26 +15,9 @@
 	<body>
 		<div class="container">
 			<div class="inner">
-				<center><h2>gReef Tank Monitor</h2></center>
+				<center><h2>Greehouse Monitor</h2></center>
 
-				<div style="display:flex;">
-					<div class="col-6">
-						<strong>&nbsp; Aquarium Water</strong>
-						<hr/>
-						<p>
-							&nbsp; Temperature:
-							<span style="float:right;" id="#last-water-temp"></span>
-						</p>
-						<p>
-							&nbsp; pH:
-							<span style="float:right;" id="#last-water-ph"></span>
-						</p>
-						<p>
-							&nbsp; TDS:
-							<span style="float:right;" id="#last-water-tdsppm"></span>
-						</p>
-
-						</hr>
+				<div >
 						<strong>&nbsp; Ambient Air</strong>
 						<hr/>
 						<p>
@@ -45,42 +28,15 @@
 							&nbsp; Humidity:
 							<span style="float:right;" id="#last-humidity"></span>
 						</p>
-						<p>
-							&nbsp; CO₂:
-							<span style="float:right;" id="#last-air-co2ppm"></span>
-						</p>
-						</hr>
-						<strong>&nbsp; Lighting</strong>
-						<hr/>
-						<p>
-							&nbsp; Light Intensity (at glass):
-							<span style="float:right;" id="#last-lighting"></span>
-						</p>
-
-						<hr/>
-						<p>
-							<canvas id="lighting-chart"></canvas>
-						</p>
-
 					</div>
-					<div class="col-6">
+					<div class="col-12">
 						<p>
 							<canvas id="temp-chart"></canvas>
 						</p>
-						<p>
-							<canvas id="ph-chart"></canvas>
-						</p>
-						<p>
-							<canvas id="tds-chart"></canvas>
-						</p>
-						<p>
-							<canvas id="co2-chart"></canvas>
-						</p>
 					</div>
-				</div>
 				<hr/>
 				<h5>
-					<center>
+					<!-- <center>
 						<img src="/image/camera.png" style="height: 1em;">
 						<a href="https://www.youtube.com/channel/UCrxnMn_wq78cNzXopw9h4aA?view_as=subscriber"
                                     onclick="window.open(this.href,
@@ -96,7 +52,7 @@
                                     return false;">Live Tank Camera
                         </a>
 
-					</center>
+					</center> -->
 				</h5>
 			</div>
 		</div>

@@ -49,7 +49,7 @@ func (d *ORM) setup() {
 
 // TempHumData for storing stuff
 type TempHumData struct {
-	ID          int `gorm:"primaryKey"`
+	// ID          int `gorm:"primaryKey;autoIncrement:true"`
 	Timestamp   time.Time
 	Temperature float64
 	Humidity    float64
