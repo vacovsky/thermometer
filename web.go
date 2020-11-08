@@ -7,8 +7,6 @@ import (
 	"net/http"
 	"sync"
 	"time"
-
-	"github.com/vacovsky/greef/data"
 )
 
 var buffer = make(map[int][]byte)
@@ -40,7 +38,7 @@ func getTemperatureChartData(w http.ResponseWriter, r *http.Request) {
 }
 
 // GetTemperaturesChartData stuff
-func GetTemperaturesChartData() data.Chart {
+func GetTemperaturesChartData() Chart {
 	chartHours := 96
 	rawdata := []TempHumData{}
 	labels := []int64{}
@@ -69,7 +67,7 @@ func GetTemperaturesChartData() data.Chart {
 		ambientHumStr = append(ambientHumStr, fmt.Sprintf("%.0f", curAH))
 
 	}
-	chart := data.Chart{
+	chart := Chart{
 		Series: []string{"Ambient Air Temperature", "Ambient Humidity"},
 		Labels: labels,
 		Data:   [][]string{ambientTempStr, ambientHumStr},

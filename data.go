@@ -55,6 +55,8 @@ type TempHumData struct {
 	Humidity    float64
 }
 
-// func main() {
-// 	DataService().setup()
-// }
+type Chart struct {
+	Series []string
+	Labels []int64
+	Data   [][]string
+}
