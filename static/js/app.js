@@ -115,20 +115,18 @@ function loadTempChart() {
           }
         }
       };
+
       var ctx = document.getElementById("temp-chart").getContext("2d");
       new Chart(ctx, config);
 
       weld(
-        document.getElementById("#last-water-temp"),
+        document.getElementById("#last-air-temp"),
         getLastValue(chartData.Data[0]) + " °F"
       );
-      weld(
-        document.getElementById("#last-air-temp"),
-        getLastValue(chartData.Data[1]) + " °F"
-      );
+
       weld(
         document.getElementById("#last-humidity"),
-        getLastValue(chartData.Data[2]) + " %"
+        getLastValue(chartData.Data[1]) + " %"
       );
     }
   };
